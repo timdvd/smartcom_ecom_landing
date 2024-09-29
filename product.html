@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ecom_store - product</title>
+    <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
+    <!-- fontawesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <!-- css main -->
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+    <header>
+        <div class="container top-nav">
+            <a href="index.html" class="logo"><img src="img/logo.png" alt="logo"></a>
+            <form action="" class="search">
+                <input type="search" placeholder="Search for products...">
+                <button type="submit">Search</button>
+            </form>
+            <div class="cart__header">
+                <div class="icon__cart" onclick="open_cart()">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span class="count__item">0</span>
+                </div>
+                <div class="total__price">
+                    <p>My Cart:</p>
+                    <p class="price__cart__head">$0</p>
+                </div>
+            </div>
+        </div>
+        <nav>
+            <div class="links container">
+                <i onclick="open_menu()" class="fa-solid fa-bars btn__open__menu"></i>
+                <ul id="menu">
+                    <span class="bg__overlay" onclick="close_menu()"></span>
+                    <i onclick="close_menu()" class="fa-regular fa-circle-xmark btn__close__menu"></i>
+                    <img src="img/logo.png" alt="" class="logo__menu">
+                    <li class="active"><a href="index.html">home</a></li>
+                    <li><a href="all_products.html">all products</a></li>
+                    <li><a href="#">about us</a></li>
+                    <li><a href="#">contact</a></li>
+                </ul>
+                <div class="login__signup">
+                    <a href="#">login <i class="fa-solid fa-right-to-bracket"></i></a>
+                    <a href="#">sign up <i class="fa-solid fa-user"></i></a>
+                </div>
+            </div>
+        </nav>
+    </header>
+    
+    <div class="cart">
+        <div class="top__cart">
+            <h3>My Cart <span>(0 Item in Cart )</span></h3>
+            <span class="close__cart" onclick="close_cart()"><i class="fa-regular fa-circle-xmark"></i></span>
+        </div>
+
+        <div class="items__in__cart">
+            <div class="item__cart">
+                <img src="img/product/prod1.png" alt="">
+                <div class="content">
+                    <h4>Lorem ipsum dolor sit amet consectetur.</h4>
+                    <p class="price__cart">$590</p>
+                </div>
+                <button class="delete__item"><i class="fa-solid fa-trash"></i></button>
+            </div>
+
+            <div class="item__cart">
+                <img src="img/product/prod2.png" alt="">
+                <div class="content">
+                    <h4>Lorem ipsum dolor sit amet consectetur.</h4>
+                    <p class="price__cart">$490</p>
+                </div>
+                <button class="delete__item"><i class="fa-solid fa-trash"></i></button>
+            </div>
+        </div>
+
+        <div class="bottom__cart">
+            <div class="total">
+                <p>Cart subtotal</p>
+                <p class="price__cart__total">$0</p>
+            </div>
+            <div class="button__cart">
+                <a href="#" class="btn__cart">Go to Checkout</a>
+                <button class="btn__cart trans__bg">Shop More</button>
+            </div>
+        </div>
+    </div>
+    <!-- main -->
+    <div class="item__detail">
+        <div class="container">
+            <div class="img__item">
+                <div class="big__img">
+                    <img id="bigImg" src="img/product/prod1.png" alt="">
+                </div>
+                <div class="sm__imgs">
+                    <img onclick="ChangeItemImage(this.src)" src="img/product/prod1.png" alt="">
+                    <img onclick="ChangeItemImage(this.src)" src="img/product/prod21.png" alt="">
+                    <img onclick="ChangeItemImage(this.src)" src="img/product/prod22.png" alt="">
+                </div>
+            </div>
+            <div class="details__item">
+                <h1 class="name">Original Mobile</h1>
+                <div class="stars">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+                <div class="price">
+                    <p><span>$200.00</span></p>
+                    <p class="old__price">$250.00</p>
+                </div>
+                <h5>Avaailability: <span>In Stock</span></h5>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis, repellat possimus ea voluptates dolorum 
+                    maiores, consectetur quod perferendis molestias esse culpa cum. Officiis eaque, provident excepturi rerum, 
+                    eligendi, odit aliquam ea repellat ut animi quibusdam corporis illum doloremque aperiam?
+                    repellat odio nobis cumque ipsa debitis natus quasi totam, tempora atque delectus impedit veniam maxime. 
+                    In tenetur iusto voluptas non quo qui quam cupiditate eos explicabo molestias molestiae.
+                </p>
+                <button>Add To Cart</button>
+                <div class="icons">
+                    <span><i class="fa-regular fa-heart"></i></span>
+                    <span><i class="fa-solid fa-sliders"></i></span>
+                    <span><i class="fa-solid fa-print"></i></span>
+                    <span><i class="fa-solid fa-share-nodes"></i></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- products slider -->
+    <section class="slide slide__sale">
+        <div class="container">
+            <div class="sale__section mySwiper">
+                <div class="top__slide">
+                    <h2>On sale <span>product</span></h2>
+                </div>
+                <div class="products swiper-wrapper">
+
+                    <div class="product swiper-slide">
+
+                        <div class="icons">
+                            <span><i class="fa-solid fa-cart-plus"></i></span>
+                            <span><i class="fa-solid fa-heart"></i></span>
+                        </div>
+
+                        <span class="sale__present">12%</span>
+                        <div class="img__product">
+                            <img src="img/product/prod1.png" alt="">
+                        </div>
+                        <h3 class="name__product"><a href="product.html">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                        </a></h3>
+                        <div class="stars">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+
+                        <div class="price">
+                            <p><span>590$</span></p>
+                            <p class="old__price">$670</p>
+                        </div>
+                    </div>
+
+                    <div class="product swiper-slide">
+
+                        <div class="icons">
+                            <span><i class="fa-solid fa-cart-plus"></i></span>
+                            <span><i class="fa-solid fa-heart"></i></span>
+                        </div>
+
+                        <span class="sale__present">20%</span>
+                        <div class="img__product">
+                            <img src="img/product/prod2.png" alt="">
+                        </div>
+                        <h3 class="name__product"><a href="product.html">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                        </a></h3>
+                        <div class="stars">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+
+                        <div class="price">
+                            <p><span>500$</span></p>
+                            <p class="old__price">$600</p>
+                        </div>
+                    </div>
+
+                    <div class="product swiper-slide">
+
+                        <div class="icons">
+                            <span><i class="fa-solid fa-cart-plus"></i></span>
+                            <span><i class="fa-solid fa-heart"></i></span>
+                        </div>
+
+                        <span class="sale__present">5%</span>
+                        <div class="img__product">
+                            <img src="img/product/prod3.png" alt="">
+                        </div>
+                        <h3 class="name__product"><a href="product.html">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                        </a></h3>
+                        <div class="stars">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+
+                        <div class="price">
+                            <p><span>120$</span></p>
+                            <p class="old__price">$130</p>
+                        </div>
+                    </div>
+
+                    <div class="product swiper-slide">
+
+                        <div class="icons">
+                            <span><i class="fa-solid fa-cart-plus"></i></span>
+                            <span><i class="fa-solid fa-heart"></i></span>
+                        </div>
+
+                        <span class="sale__present">17%</span>
+                        <div class="img__product">
+                            <img src="img/product/prod4.png" alt="">
+                        </div>
+                        <h3 class="name__product"><a href="product.html">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                        </a></h3>
+                        <div class="stars">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+
+                        <div class="price">
+                            <p><span>830$</span></p>
+                            <p class="old__price">$1000</p>
+                        </div>
+                    </div>
+
+                    <div class="product swiper-slide">
+
+                        <div class="icons">
+                            <span><i class="fa-solid fa-cart-plus"></i></span>
+                            <span><i class="fa-solid fa-heart"></i></span>
+                        </div>
+
+                        <span class="sale__present">20%</span>
+                        <div class="img__product">
+                            <img src="img/product/prod5.png" alt="">
+                        </div>
+                        <h3 class="name__product"><a href="product.html">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                        </a></h3>
+                        <div class="stars">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+
+                        <div class="price">
+                            <p><span>200$</span></p>
+                            <p class="old__price">$250</p>
+                        </div>
+                    </div>
+
+                    <div class="product swiper-slide">
+
+                        <div class="icons">
+                            <span><i class="fa-solid fa-cart-plus"></i></span>
+                            <span><i class="fa-solid fa-heart"></i></span>
+                        </div>
+
+                        <span class="sale__present">30%</span>
+                        <div class="img__product">
+                            <img src="img/product/prod6.png" alt="">
+                        </div>
+                        <h3 class="name__product"><a href="product.html">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                        </a></h3>
+                        <div class="stars">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+
+                        <div class="price">
+                            <p><span>80$</span></p>
+                            <p class="old__price">$115</p>
+                        </div>
+                    </div>
+
+                    <div class="product swiper-slide">
+
+                        <div class="icons">
+                            <span><i class="fa-solid fa-cart-plus"></i></span>
+                            <span><i class="fa-solid fa-heart"></i></span>
+                        </div>
+
+                        <span class="sale__present">16%</span>
+                        <div class="img__product">
+                            <img src="img/product/prod7.png" alt="">
+                        </div>
+                        <h3 class="name__product"><a href="product.html">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                        </a></h3>
+                        <div class="stars">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+
+                        <div class="price">
+                            <p><span>110$</span></p>
+                            <p class="old__price">$90</p>
+                        </div>
+                    </div>
+
+                    <div class="product swiper-slide">
+
+                        <div class="icons">
+                            <span><i class="fa-solid fa-cart-plus"></i></span>
+                            <span><i class="fa-solid fa-heart"></i></span>
+                        </div>
+
+                        <span class="sale__present">20%</span>
+                        <div class="img__product">
+                            <img src="img/product/prod8.png" alt="">
+                        </div>
+                        <h3 class="name__product"><a href="product.html">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                        </a></h3>
+                        <div class="stars">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+
+                        <div class="price">
+                            <p><span>200$</span></p>
+                            <p class="old__price">$150</p>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="swiper-button-next btn__Swip"></div>
+                <div class="swiper-button-prev btn__Swip"></div>
+            </div>
+        </div>
+    </section>
+    <!-- newsletter section -->
+    <section class="newsletter">
+        <div class="container">
+            <div class="text">
+                <div class="content">
+                    <h4>Sign up to newsletter</h4>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rem illum explicabo odit qui nesciunt?</p>
+                    <h6>$25 Coupon For First Shopping</h6>
+                </div>
+            </div>
+            <form class="newsletter__form">
+                <input type="email" placeholder="Enter Your Email">
+                <button type="submit">Subscribe</button>
+            </form>
+        </div>
+    </section>
+    <!-- back to top -->
+    <div class="back__to__top">
+        <i class="fa-solid fa-angles-up"></i>
+    </div>
+    <!-- footer -->
+    <footer>
+        <div class="container">
+            <div class="big__row">
+                <img src="img/logo.png" alt="">
+                <div class="hotline">
+                    <div class="text">
+                        <h5>free Delivery </h5>
+                        <h6>(+123) 456 78 90</h6>
+                    </div>
+                </div>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Amet, aliquam?</p>
+            </div>
+            <div class="row">
+                <h4>Help & FAQs</h4>
+                <div class="links">
+                    <a href="#">FAQs</a>
+                    <a href="#">Contacts</a>
+                    <a href="#">Events</a>
+                    <a href="#">Help Center</a>
+                </div>
+            </div>
+            <div class="row">
+                <h4>Shipping & Delivery</h4>
+                <div class="links">
+                    <a href="#">Delivery</a>
+                    <a href="#">Discount</a>
+                    <a href="#">Shipping Guide</a>
+                    <a href="#">Estimated Time</a>
+                </div>
+            </div>
+            <div class="row">
+                <h4>Shipping & Delivery</h4>
+                <div class="links">
+                    <a href="#">Popular</a>
+                    <a href="#">Services</a>
+                    <a href="#">Your Account</a>
+                    <a href="#">Policy Terms</a>
+                </div>
+            </div>
+        </div>
+        <div class="bottom__footer">
+            <div class="container">
+                <p>Copyright &copy; <span>Smartcom</span> all rights served.</p>
+            </div>
+        </div>
+    </footer>
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="scripts/main.js"></script>
+</body>
+</html>
